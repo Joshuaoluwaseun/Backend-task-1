@@ -1,7 +1,10 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port = 3000
+require('dotenv').config()
+const helmet = require('helmet');
+const compression = require('compression')
+const port = process.env.PORT || 3000
 
 app.use(cors())
 
@@ -14,6 +17,10 @@ app.get('/', (req, res) => {
     "bio": "I am an ambitious person that likes to make impact where ever I am"
   })
 })
+
+
+app.use(helmet);
+app.use(compression);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
