@@ -7,7 +7,6 @@ const compression = require('compression')
 const port = process.env.PORT || 3000
 
 app.use(cors())
-
 // get route
 app.get('/', (req, res) => {
   return res.status(200).json({
