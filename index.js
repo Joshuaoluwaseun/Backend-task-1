@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
   })
 })
 
-
 app.use(helmet);
 app.use(compression);
 
