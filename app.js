@@ -11,14 +11,14 @@ app.use(cors())
 app.get('/', (req, res) => {
   return res.status(200).json({
     "slackUsername": "Joshua_t",
-    "Backend": true,
+    "backend": true,
     "age": 24,
     "bio": "I am an ambitious person that likes to make impact where ever I am"
   })
 })
 
-app.use(helmet);
-app.use(compression);
+app.use(helmet());
+app.use(compression());
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
